@@ -1,0 +1,59 @@
+# IT 140 Module Four Assignment
+# Higher/Lower Game Pseudocode Template
+
+START hilow_game
+
+    # Establish a valid guessing range.
+    OUTPUT "Enter the lower bound:"
+    INPUT lower_bound
+
+    OUTPUT "Enter the upper bound:"
+    INPUT upper_bound
+
+    WHILE lower_bound >= upper_bound
+        OUTPUT "The lower bound must be less than the upper bound."
+        OUTPUT "Enter the lower bound:"
+        INPUT lower_bound
+
+        OUTPUT "Enter the upper bound:"
+        INPUT upper_bound
+    ENDWHILE
+
+    # Establish the number the player is trying to guess.
+    SET random_number = RANDOM number between lower_bound and upper_bound
+
+    # Play the game.
+    OUTPUT "Enter a guess between the lower and upper bounds:"
+    INPUT guess
+
+    WHILE guess < lower_bound OR guess > upper_bound
+        OUTPUT "Your guess must be between the lower and upper bounds."
+        OUTPUT "Enter another guess:"
+        INPUT guess
+    ENDWHILE
+
+    WHILE guess != random_number
+
+        IF guess < random_number THEN
+            OUTPUT "Your guess is too low."
+        ELSE
+            OUTPUT "Your guess is too high."
+        ENDIF
+
+        OUTPUT "Enter another guess:"
+        INPUT guess
+
+        WHILE guess < lower_bound OR guess > upper_bound
+            OUTPUT "Your guess must be between the lower and upper bounds."
+            OUTPUT "Enter another guess:"
+            INPUT guess
+        ENDWHILE
+
+    ENDWHILE
+
+    OUTPUT "You guessed the correct number!"
+
+END hilow_game
+
+# === References ===
+# IT 140 Guide to Pseudocode, Southern New Hampshire University.
